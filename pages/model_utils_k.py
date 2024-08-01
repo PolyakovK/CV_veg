@@ -42,7 +42,7 @@ class ResNet18ForLocalization(nn.Module):
         class_outputs = self.fc3(x)
         return bbox_outputs, class_outputs
 
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")  
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")     
 model = ResNet18ForLocalization().to(device)
 model.load_state_dict(torch.load('models/resnet_weight.pt', map_location=torch.device('cpu')))
 ind2class = {0: 'cucumber', 1: 'eggplant', 2: 'mushroom'}
@@ -145,7 +145,7 @@ def plot_history(history, grid=True):
     
     return buf
         
-model_path = 'models/best_k.pt'    
+        
 @st.cache_data
 def load_yolov5_model(model_path):
     # Загрузка кастомной модели YOLOv5

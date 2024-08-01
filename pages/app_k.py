@@ -111,4 +111,3 @@ if model_option == 'YOLOv5':
                 buf = save_image_to_bytes(Image.fromarray(results_img))
                 
                 st.image(buf, caption='YOLOv5 Prediction')
-    
