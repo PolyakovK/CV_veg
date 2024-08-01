@@ -23,7 +23,7 @@ model_option = st.selectbox('Выберите модель', ['ResNet18', 'YOLOv
 if model_option == 'ResNet18':
     
     st.subheader('Dataset Information')
-    history = load_history('/pages/training_history.json')
+    history = load_history('pages/training_history.json')
     buf = plot_history(history)
     st. image(buf)
     
@@ -55,9 +55,9 @@ if model_option == 'ResNet18':
 
 if model_option == 'YOLOv5':
     
-    img1 = Image.open('/images/confusion_matrix_K.png')
-    img2 = Image.open('/images/PR_curve_K.png')
-    img3 = Image.open('/images/results_K.png')
+    img1 = Image.open('images/confusion_matrix_K.png')
+    img2 = Image.open('images/PR_curve_K.png')
+    img3 = Image.open('images/results_K.png')
     
     col1, col2, col3 = st.columns(3)
 
