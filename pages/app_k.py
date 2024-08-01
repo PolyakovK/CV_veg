@@ -76,7 +76,7 @@ if model_option == 'YOLOv5':
     }
     st.write(dataset_info)
     
-    model_path = '/models/best_k.pt'
+    model_path = 'models/best_k.pt'
     model = load_yolov5_model(model_path)
 
     option = st.selectbox('Выбери способ загрузки изображения', ['From URL', 'From File'])
