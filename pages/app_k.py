@@ -78,7 +78,6 @@ if model_option == 'YOLOv5':
     
     model_path = 'models/best_k.pt'
     model = load_yolov5_model(model_path)
-
     option = st.selectbox('Выбери способ загрузки изображения', ['From URL', 'From File'])
 
     if option == 'From URL':
