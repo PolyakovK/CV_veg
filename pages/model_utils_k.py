@@ -42,7 +42,7 @@ class ResNet18ForLocalization(nn.Module):
         class_outputs = self.fc3(x)
         return bbox_outputs, class_outputs
 
-device = 'cuda'    
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")  
 model = ResNet18ForLocalization().to(device)
 model.load_state_dict(torch.load('/models/resnet_weight.pt'))
 ind2class = {0: 'cucumber', 1: 'eggplant', 2: 'mushroom'}
